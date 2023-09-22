@@ -1,0 +1,98 @@
+@import 'reset';
+@import 'var';
+@import 'base';
+
+.card {
+    max-width: 1300px;
+
+    background-color: $dark_desaturated_blue;
+    border-radius: 15px;
+    overflow: hidden;
+    
+    display: grid;
+
+    @media screen and (min-width: 1000px) {
+        order: -1;
+        border-radius: 10px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__image-container {
+        width: 100%;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            
+            background-color: darken($color: $soft_violet, $amount: 30%);
+            opacity: .6;
+            
+            z-index: 2;
+        }
+    }
+
+    &__info-container {
+        padding: 2.5rem 1.25rem;
+        color: white;
+
+        text-align: center;
+
+        display: grid;
+        gap: 1.5rem;
+
+        @media screen and (min-width: 1000px) {
+            text-align: left;
+            order: -1;
+            padding: 5.3rem 5rem;
+        }
+    
+        .card__title {
+            font-size: 1.9rem;
+            line-height: 1.1;
+
+            @media screen and (min-width: 1000px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .card__desc {
+            font-size: 1.1rem;
+            color: $slightly_transparent_white;
+
+            @media screen and (min-width: 1000px) {
+                font-size: 1.2rem;
+            }
+        }
+
+        .card__stats-container {
+            padding-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            @media screen and (min-width: 1000px) {
+                flex-direction: row;
+                gap: 5rem;
+            }
+
+            .stats-value {
+                font-weight: 700;
+                font-size: 2rem;
+            }
+
+            .stats-desc {
+                text-transform: uppercase;
+                font-size: .8125rem;
+                letter-spacing: 2px;
+                color: $slightly_transparent_white;
+            }
+        }
+    }
+}

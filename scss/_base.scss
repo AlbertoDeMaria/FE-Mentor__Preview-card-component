@@ -1,0 +1,15 @@
+body {
+    min-height: 100vh;
+
+    padding: 1rem;
+
+    display: grid;
+    place-items: center;
+
+    font-family: $ff-primary;
+    background-color: $very_dark_blue;
+}
+
+.highlight {
+    color: $soft_violet;
+}
